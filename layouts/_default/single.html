@@ -11,8 +11,10 @@
 			{{- end }}
 		</header>
 		{{- if .Params.thumbnail }}
+		{{ $image := .Resources.Get .Params.thumbnail }} 
+		{{ $image := $image.Resize "800x" }} 
 		<figure class="post__thumbnail">
-			<img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Title }}">
+			<img src="{{ $image.RelPermalink | relURL }}" alt="{{ .Title }}">
 		</figure>
 		{{- end }}
 		{{- partial "post_toc.html" . -}}
