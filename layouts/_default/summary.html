@@ -1,6 +1,6 @@
 <article class="list__item post">
 	{{- if .Params.thumbnail }}
-	{{ $image := resource.Get .Params.thumbnail }} 
+	{{ $image := resources.Get .Params.thumbnail }} 
 	{{ $image := $image.Resize "235x" }} 
 	<figure class="list__thumbnail">
 		<a href="{{ .Permalink }}">
