@@ -12,7 +12,7 @@
 		</header>
 		{{- if .Params.thumbnail }}
 		{{ $image := resources.Get .Params.thumbnail }} 
-		{{ $image := $image.Resize "800x" }} 
+		{{ $image := $image.Resize "1200x" }} 
 		<figure class="post__thumbnail">
 			<img src="{{ $image.RelPermalink | relURL }}" alt="{{ .Title }}">
 		</figure>
